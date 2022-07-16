@@ -33,15 +33,16 @@ buyBtns.forEach(function(button){
   button.addEventListener('click', handleByButtonClick);
 })
 
-window.addEventListener("click", function(event) {
-  console.log("you clicked the window");
-  console.log(event.target);
-  console.log(event.type);
-  console.log(event.bubbles);
-},
-{ capture: true }
-);
+// window.addEventListener("click", function(event) {
+//   console.log("you clicked the window");
+//   console.log(event.target);
+//   console.log(event.type);
+//   console.log(event.bubbles);
+// },
+// { capture: true }
+// );
 
-photoEl.addEventListener("mousemove", function(e) {
+photoEl.addEventListener("mouseenter", function(e) {
   console.log(e.currentTarget);
+  console.log(this);
 });
