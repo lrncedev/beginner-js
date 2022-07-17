@@ -30,7 +30,7 @@ function handleKey(e) {
 
 window.addEventListener('keydown', handleKey);
 
-function draw({key}) {
+function draw({key}) { 
   hue += 1;
   ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
   ctx.beginPath();
