@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>If Statements</title>
+  <link rel="stylesheet" href="../../base.css">
+</head>
+
+<body>
+  <script>
+
+  const age = 100;
+  if (age > 70) {
+    console.log('In your seventies');
+  } else if (age > 60) {
+    console.log('In your sixties');
+  } else if (age > 50) {
+    console.log('In your 50s');
+  } else {
+    console.log("nothing was true");
+  }
+
+  function slugify(sentence, lowercase) {
+    const slug = sentence.replace(/\s/g, "-");
+    if (lowercase) {
+      return slug.toLowerCase();
+    }
+    return slug;
+  }
+
+  const first = "wes";
+  const last = "bos";
+  
+  if (first === 'scott' || (first === 'wes' && last === 'bos')) {
+    console.log('Cool name!');
+  }
+
+  const isAwesomeName = "awesome".includes(first);
+  if (isAwesomeName) {
+    console.log("SUPER COOL AWESOME NAME");
+  }
+
+  function nameIsAwesome(name) {
+    return "awesome".includes(name);
+  }
+
+  if (nameIsAwesome("wes")) {
+    console.log("COOL NAME WES");
+  }
+
+  const dog = "snickers";
+
+  if (dog) {
+    console.log("You have a dog");
+  } else {
+    console.log("You don't have a dog");
+  }
+
+  const score = -10;
+  if (score) {
+    console.log('There is a score already');
+  } else {
+    console.log('No score yet');
+  }
+  const values = [[], [], -10, 1, 0, "", "full string", " ", undefined, NaN, null];
+
+  values.forEach(value => {
+    if (value) {
+      console.log(value, 'is truthy');
+    } else {
+      console.log(value, 'is falsy');
+    }
+  })
+
+  const isCool = true;
+
+  if (!isCool) {
+    console.log("You are not cool");
+  }
+
+  const middle = '';
+
+  const count = 0;
+  // let word;
+  // if (count === 1) {
+  //   word = 'item';
+  // } else {
+  //   word = 'items';
+  // }
+  const word = count === 1 ? 'item' : 'items';
+  const sentence = `You have ${count} ${word} in your cart`;
+  console.log(sentence);
+
+  const isAdmin = false;
+
+  function showAdminbar(){
+    console.log("Showing admin bar");
+  }
+
+  isAdmin ? showAdminbar() : null;
+  function check1() {
+    console.log("Running check 1");
+    return true;
+  }
+  function check2() {
+    console.log("Running check 2");
+    return false;
+  }
+  function check3() {
+    console.log("Running check 3");
+    return true;
+  }
+
+  if (check1() && check2() && check3()) {
+    console.log("all checks passed");
+  } else {
+    console.log("Some checks failed");
+  }
+
+  if (isAdmin) {
+    showAdminBar();
+  }
+
+  </script>
+</body>
+
+</html>
