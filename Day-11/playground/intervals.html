@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Intervals and Timers</title>
+  <link rel="stylesheet" href="../../base.css">
+</head>
+
+<body>
+
+</body>
+<script>
+
+  function logger() {
+    console.log("logged after few secs")
+  }
+
+  function setImmediateInterval(fnToRun, ms) {
+    fnToRun();
+    return setInterval(fnToRun, ms);
+  }
+
+  function destroy() {
+    document.body.innerHTML = '<p style="color: white; font-size: 50px; font-weight: bold;">DESTROYED</p>';
+  }
+  
+  const bombTimer = setTimeout(destroy, 5000);
+
+  // window.addEventListener("click", function() {
+  //   document.body.innerHTML ='<p style="color: white; font-size: 50px; font-weight: bold;">YOU SAVED THE WORLD</p>';
+  //   // How do you stop the timer from running?!
+  //   clearTimeout(bombTimer);
+  // });
+
+const poopInterval = setInterval(function() {
+  console.log(`💩`);
+  console.log("Hehehe");
+}, 100);
+
+setTimeout(function() {
+clearInterval(poopInterval);
+}, 3000);
+</script>
+</html>
