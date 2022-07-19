@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../../base.css" />
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/lodash@4.17.15/lodash.js"></script>
+    <script>
+      let name1 = "wes";
+      let name2 = "wes";
+
+      // console.log(name1 === name2);
+      // name1 = "Scott";
+      // name1 = name2;
+      // console.log(name1 === name2);
+
+      const person1 = {
+        first: "wes",
+        last: "bos",
+        clothing: {
+          shirts: 10,
+          pants: 2,
+        },
+      };
+
+      const person2 = {
+        first: "wes",
+        last: "bos",
+      };
+
+      // const person3 = person1;
+      // person3.last = "sob";
+      // console.log(person3, person1);
+
+      /* Spread Operator ( ... ) */
+
+      // const person3 = { ...person1 };
+      // person3.last = "sob";
+      // console.log(person3, person1);
+
+      const person3 = _.cloneDeep(person1);
+      person3.first = "Larry";
+      person3.clothing.shirts = 100;
+      // console.log(person3, person1);
+
+      const meatInventory = {
+        bacon: 2,
+        sausage: 3,
+      };
+      const veggieInventory = {
+        lettuce: 5,
+        tomatoes: 3,
+      };
+
+      const inventory = {
+        ...meatInventory,
+        ...veggieInventory,
+        pepper: 9,
+      };
+      // console.log(inventory);
+
+      function doStuff(data) {
+        console.log(data);
+      }
+
+      doStuff(name1);
+
+      function doStuff2(data) {
+        data.tomatoes = 1000000000;
+        console.log(data);
+      }
+
+      doStuff2(veggieInventory);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Maps</title>
+    <link rel="stylesheet" href="../../base.css" />
+  </head>
+
+  <body>
+    <ul class="prizes"></ul>
+    <script>
+      const myMap = new Map();
+      myMap.set("name", "Lau");
+      myMap.age = 100;
+      myMap.set(100, "An example");
+
+      const person1 = {
+        name: "wes",
+        age: 200,
+      };
+
+      myMap.set(person1, "Random value");
+
+      // console.log(myMap);
+
+      const score = 100;
+      const prizes = new Map();
+
+      prizes.set(100, "Bear");
+      prizes.set(200, "Cat");
+      prizes.set(300, "Dog");
+
+      // console.log(prizes);
+      // console.log(`you win a ${prizes.get(score)}`);
+      const ul = document.querySelector(".prizes");
+
+      //forEach Loop
+      prizes.forEach((prize) => {
+        ul.innerHTML += `<li> ${prize} </li>`;
+      });
+
+      //For Of Loop
+      for (const [points, prize] of prizes) {
+        console.log(points, prize);
+      }
+
+      const person = {
+        name: "Lau",
+        age: 23,
+      };
+
+      const objToJSON = JSON.stringify(person);
+      console.log("OBJECT TO JSON :", objToJSON);
+
+      const JSONtoObj = JSON.parse(objToJSON);
+      console.log("JSON TO OBJECT :", JSONtoObj);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title> </title>
+    <link rel="stylesheet" href="../../base.css" />
+  </head>
+
+  <body>
+    <script>
+      const names = ["wes", "kait", "snickers"];
+
+      console.log(names[0]);
+      console.log(names.length);
+
+      console.log(names[names.length - 1]);
+
+      // Mutative Method
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+      const pizzaSlice = numbers.slice(2, 4);
+      // Create a copy of the numbers array before using a mutable method
+
+      const numbersReversed = [...numbers];
+      numbersReversed.reverse();
+      console.log("Hi i am from the pizzaSlice:", pizzaSlice);
+      console.log("Hi i am from the numbers:", numbers);
+      console.log("Hi i am from the numbersReversed:", numbersReversed);
+
+      const names2 = [...names];
+      names2.push("lux");
+
+      const names3 = [...names2];
+      names3.unshift("poppy");
+
+      console.log("This is from names:", names);
+      console.log("This is from names2: ", names2);
+      console.log("This is from names3:", names3);
+
+      console.log(numbers);
+      numbers.splice(3, 2);
+      console.log(numbers);
+
+      const bikes = ["bianchi", "miele", "panasonic", "miyata"];
+
+      const newBikes = [...bikes.slice(0, 2), "benotto", ...bikes.slice(2)];
+      console.log(newBikes);
+
+      const comments = [
+        { text: "Cool Beans", id: 123 },
+        { text: "Love this", id: 133 },
+        { text: "Neato", id: 233 },
+        { text: "good bikes", id: 333 },
+        { text: "so good", id: 433 },
+      ];
+
+      const userIndex = names.findIndex((name) => {
+        return name === "kait";
+      });
+
+      console.log(userIndex);
+      console.log(names[userIndex]);
+
+      const newNamesWithOutKait = [
+        // get everything up to the kait index
+        ...names.slice(0, userIndex),
+        // everything after
+        ...names.slice(userIndex + 1),
+      ];
+
+      console.log(newNamesWithOutKait);
+
+      /*
+      This function accepts the ID and the Array.
+      every run of this method returns an array from start to the ID, and from the ID to the last index.
+      Means, this only deletes the comment with the same ID
+
+      */
+      function deleteComment(id, comments) {
+        const commentIndex = comments.findIndex((comment) => comment.id === id);
+
+        return [
+          ...comments.slice(0, commentIndex),
+          ...comments.slice(commentIndex + 1),
+        ];
+      }
+    </script>
+  </body>
+</html>
