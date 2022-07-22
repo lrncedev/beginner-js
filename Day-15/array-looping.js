@@ -168,7 +168,25 @@ const totalPrice = inventory.reduce((acc, item) => acc + item.price, 0);
 
 console.log(totalPrice);
 
-console.clear();
+// console.clear();
+
+/* 
+In the reduce exercise, we used split, filter, map, and reduce methods.
+
+First, we have copied a text from a web page. (I just copied whats on the course).
+We used the split method to split the string into an array containing each character out of it.
+
+Then, we used the filter method, containing a callback 'isValid'. This callback used a Regex that checks if the character is an alphanumeric number. Also disregarded the casing of it. 
+
+While on the map method, we created a function that returns a new array which transformed the original array to a lowercased value instead. This array will then be used by the reduce method. 
+
+The reduce method, has arguments; a callback 'instanceCounter' and an empty object (which is the initial value(?))
+The instanceCounter then checks each item (which in this case is a 'char'). A ternary operation then is being evaluated, it checks if the initial value of item is already existing, the initial value will add 1, if not that value will then be assigned of '1';
+
+
+We also used here the Object.entries method and sort. 
+By using the entries method, the result will be transformed into an array. Since it is already an array, we can now then use the sort method.
+*/
 
 const text = `
 [0, 1, 2, 3, 4].reduce( (accumulator, currentValue, currentIndex, array) => accumulator + currentValue);
@@ -179,13 +197,14 @@ Sum all the values of an array`;
 console.log(text);
 
 const lowercase = char => char.toLowerCase();
+
 const result = text
   .split("")
   .filter(isValid)
   .map(lowercase)
   .reduce(instanceCounter, {})
 
-console.log(result);
+console.log("This is the result: ", result);
 
 function isValid(char) {
   if (char.match(/[a-z0-9]/i)) {
