@@ -6,7 +6,7 @@
 *Before we setup the project, make sure to have already install `node js` and `npm`*
 
 The FaceDetector API is still proposed, which means it is not yet available on browsers natively. To start, 
-1. First we need to enable the **_ Experimental Web Platform features _ ** in [chrome://flags](chrome://flags/).
+1. First we need to enable the **Experimental Web Platform features** in [chrome://flags/](chrome://flags)
   - Search for 'Experimental Web Platform features' and enable it. This may require you to restart your browsers.
 
 2. You can now then clone/fork this repository in your machine.
