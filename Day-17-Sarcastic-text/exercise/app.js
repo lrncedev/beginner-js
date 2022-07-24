@@ -26,15 +26,18 @@ const filterOptions = {
     return isFirstLetter && random === 2 ? `${letter}-`.repeat(3) + letter : letter;
   },
   mate: function (letter, index, text) {
-    const samuelJacksoned = 'mate'
-    const isSymbol = text[index] === "."  || text[index] === '?';
-    return isSymbol ? ` ${samuelJacksoned}` + letter : letter;
+    const mate = 'mate';
+
+    const isSymbol = text[index] === "." || text[index] === ',';
+    const isSpace = text[index -1] === '.';
+    return isSymbol && !isSpace ? ` ${mate}` + letter : letter;
   }
 }
 function transformText(text) {
   const filter = filterInputs.find((input) => input.checked).value;
   const mod = Array.from(text).map(filterOptions[filter]).join("");
   
+  result.style.fontWeight = 'bold';
   result.textContent = mod;
 }
 
@@ -46,3 +49,5 @@ filterInputs.forEach(input =>
     transformText(textarea.value);
   })
 )
+
+window.addEventListener("load", () => transformText(textarea.value));
