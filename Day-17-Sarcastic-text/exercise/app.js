@@ -29,8 +29,8 @@ const filterOptions = {
     const mate = 'mate';
 
     const isSymbol = text[index] === "." || text[index] === ',';
-    const isSpace = text[index -1] === '.';
-    return isSymbol && !isSpace ? ` ${mate}` + letter : letter;
+    const isDot = text[index -1] === '.';
+    return isSymbol && !isDot ? ` ${mate}` + letter : letter;
   }
 }
 function transformText(text) {
