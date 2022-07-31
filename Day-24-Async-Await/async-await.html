@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Async Await</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
+
+  <body>
+    <script>
+      // function wait(ms = 0) {
+      //   return new Promise((resolve) => {
+      //     setTimeout(resolve, ms);
+      //   });
+      // }
+
+      // async function go() {
+      //   console.log("Starting");
+      //   await wait(3000);
+      //   console.log("running");
+      //   await wait(200);
+      //   console.log("Ending");
+      // }
+
+      // go();
+
+      function makePizza(toppings) {
+        return new Promise(function (resolve, reject) {
+          // wait 1 second for the pizza to cook
+          setTimeout(function () {
+            resolve(
+              `Here is your pizza 🍕 with the toppings ${toppings.join(" ")}`
+            );
+          }, 1000);
+          // if something went wrong, we can reject this promise
+          // if (toppings.includes("pineapple")) {
+          //   reject("Seriously? Get out 🍍");
+          // }
+        });
+      }
+
+      async function makeDinner() {
+        console.log("Creating your pizzas");
+        const pizza1 = makePizza(["salami"]);
+        const pizza2 = makePizza(["ham", "cheese"]);
+        const [salami, hamAndCheese] = await Promise.all([pizza1, pizza2]);
+        console.log(salami, hamAndCheese);
+        console.log("Pizzas delivered");
+      }
+
+      makeDinner();
+    </script>
+  </body>
+</html>
