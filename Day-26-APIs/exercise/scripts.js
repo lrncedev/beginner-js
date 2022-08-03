@@ -44,7 +44,7 @@ function displayRecipes(recipes) {
       <a href="${recipe.href}">View Recipe →</a>
     </div>`
   );
-  recipesGrid.innerHTML = html.join("");
+  recipeFlex.innerHTML = html.join("");
 }
 
 form.addEventListener("submit", handleSubmit);
